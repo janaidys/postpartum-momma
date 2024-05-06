@@ -142,14 +142,6 @@ li a {
     clip-path: circle(45% at 50% 50%);
 }
 
-/* .tatiana-name-photo {
-  color:#344e41;
-  position: relative;
-  right: 20px;
-  font-family: "Ephesis", cursive;
-  font-size: 1.5rem;
-} */
-  
 
 .name-photo {
   display: flex;
@@ -169,7 +161,7 @@ li a {
 .team-blurb {
   display: flex;
   text-align: center;
-  padding-top: 40px;
+  padding-top: 15px;
 }
 
 /* [HOW WE STARTED CONTAINER] */
@@ -214,7 +206,6 @@ li a {
 
 .beliefs-row {
     display: flex; 
-    
     padding: 35px;
     
 }
@@ -225,9 +216,7 @@ li a {
 
     
 }
-.beliefs-icons {
-    color: var(--forest-green)
-}
+
 
 h2 {
     text-align: center;
@@ -673,6 +662,15 @@ h3 {
 
 /* FORUM */
 
+.forum1 {
+  border:solid 3px var(--forest-green);
+  border-radius: 15px;
+  background-color:var(--cream);
+  margin: 30px; 
+  padding: 20px;
+  max-height: 500px;
+}
+
 .forum-prompt {
   font-size: 25px;
 }
@@ -851,9 +849,9 @@ ul {
 
 }
 
-.anaidys-photo {
+.momma-photo {
   display: flex;
-  align-items: center;
+  justify-content: center;
 }
 
 .info {
@@ -876,8 +874,15 @@ ul {
   flex-direction: column;
 }
 
-.formula { 
-  
+.formula {
+  width: 200px;
+}
+
+.formula-img { 
+  display: flex;
+  justify-content: center;
+  padding-left:  20px;
+  padding-bottom: 20px;
 }
 
 /* [LAPTOP] */
