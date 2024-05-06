@@ -694,12 +694,12 @@ h3 {
 [BABY SUB-PAGES */
 
 /* PLAYTIME */
-.image { 
+.play-image { 
   padding-right: 20px;
 }
 
 .playkit1 {
-  width: 250px;
+  /* width: 200px; */
   border-radius: 15px;
 }
 
@@ -885,7 +885,77 @@ ul {
   padding-bottom: 20px;
 }
 
+/* ----BED----- */
+
+.container1-texts {
+  display: flex; 
+  flex-direction: column;
+}
+
+.sleeping-luca { 
+  width: 200px;
+}
+
+.bedtime-routine {
+  width: 200px;
+}
+}
+
+.first-letter {
+  font-size: 3.5rem; 
+}
+
+.the-rest {
+  font-size: 3.5rem; 
+  
+}
+
+.inbetween-text {
+  font-size: 3.5rem; ; 
+}
+
+/* ----PLAY---- */
+
+.play-image {
+  display:flex;
+  justify-content: center;
+  padding-bottom: 20px;
+}
+
+.playkit1 {
+  width: 230px;
+  position: relative;
+  left: 10px;
+}
+
+/* [TABLET] */
+@media screen and (min-width: 768px) and (max-width: 768px) {
+
+/* ---BED--- */
+.container1-texts {
+  display: flex;
+  flex-direction: row;
+}
+
+.baby-img { 
+  position: relative;
+  top: 50px;
+}
+
+/* ---PLAY---- */
+
+.playkit1 {
+  width: 275px;
+  
+}
+
+}
+
 /* [LAPTOP] */
 @media screen and (min-width: 768px) and (max-width: 1024px){
+  .playkit1 {
+    width: 275px;
+    
+  }
 
 }
