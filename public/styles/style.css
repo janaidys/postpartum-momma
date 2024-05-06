@@ -142,13 +142,13 @@ li a {
     clip-path: circle(45% at 50% 50%);
 }
 
-.tatiana-name-photo {
+/* .tatiana-name-photo {
   color:#344e41;
   position: relative;
   right: 20px;
   font-family: "Ephesis", cursive;
   font-size: 1.5rem;
-}
+} */
   
 
 .name-photo {
@@ -767,9 +767,117 @@ h3 {
 
 /* [MOBILE DEVICE]] */
 @media screen and (min-width: 320px) and (max-width: 768px) {
-  li a {
-      display: none;
-  }
+  /* --------------------------------------------------
+[HEADER] */
+li a {
+  display: none;
+}
+
+ul { 
+  display: none;
+}
+
+.pm-logo {
+  width: 275px; 
+}
+
+.header-logo {
+  display: flex; 
+  justify-content: center; 
+}
+
+.login {
+  display: none;
+}
+
+.fa-bars {
+  display:block;
+  position: absolute;
+  top: 30px;
+  right:30px;
+  color: var(--sage)
+
+}
+
+  /* --------------------------------------------------
+[FOOTER] */
+
+.postpartum-momma-footer-logo {
+  display: none;
+
+  
+}
+
+
+.footer-quote {
+  font-family: "Ephesis", cursive; 
+  font-size: 1.5rem;
+  text-align: center;
+  color: var(--sage);
+
+}
+
+.row-text-footer {
+  display: flex; 
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding-bottom: 45px;
+  font-size: .8rem;
+
+}
+
+/* ----ADJUST FONT SIZING----- */
+
+.welcome {
+  font-size: 5.5rem; 
+}
+
+/* ---ABOUT PAGE---- */
+
+.beliefs-row {
+  display: flex; 
+  flex-direction: column;
+  padding: 35px;
+  
+}
+
+.name-photo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color:#344e41;
+  font-family: "Ephesis", cursive;
+  font-size: 1.5rem;
+
+}
+
+.anaidys-photo {
+  display: flex;
+  align-items: center;
+}
+
+.info {
+
+  display: flex;
+  flex-direction: column;
+}
+
+
+.team-blurb {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  /* padding-top: 40px; */
+}
+
+/* ----FED PAGE */
+.container-item {
+  display: flex; 
+  flex-direction: column;
+}
+
+.formula { 
+  
 }
 
 /* [LAPTOP] */
