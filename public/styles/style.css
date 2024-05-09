@@ -79,7 +79,6 @@ li a {
 
 .postpartum-momma-footer-logo {
     width: 175px;
-    /* clip-path: circle(50% at 50% 50%); */
     position:relative;
     bottom:15px;
     left:  40px;
@@ -113,14 +112,54 @@ li a {
 
 /* --------------------------------------------------
 [HOME PAGE */
+.blogs-section {
+  width: 100%; 
+  padding: 50px 5vw;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap:  80px;
+}
 
-.welcome {
+.blog-image {
+  width: 100%;
+  height: 250px; 
+  object-fit: cover;
+  border-radius: 10px; 
+  margin-bottom: 10px; 
+}
+
+.blog-title {
   font-family: "Ephesis", cursive; 
-  font-size: 100px;
+  font-size: 3rem;
+  color:  var(--sage)
+}
+
+.blog-overview { 
+  margin: 10px 0 20px; 
+  line-height: 30px;
+}
+
+.blog-button { 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  width: 10%;
+  height: 30px;
+  border-radius: 10px;
+  background: var(--forest-green);
+
+  font-family: "Dosis", sans-serif;
+  font-size: 15px;
   color: var(--white);
   line-height: 1.2;
-  text-align: center;
-  display: block;
+  letter-spacing: 1px;
+
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+
 }
 
 /* --------------------------------------------------
@@ -224,6 +263,193 @@ h2 {
     font-family: "Ephesis", cursive;
     font-size: 2rem;
 }
+
+/* -------------------------------------------------
+[CREATE A BLOG POST] */
+.banner{
+  width: 100%;
+  height: 200px;
+  position: relative;
+  background: var(--sage);
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+}
+
+.banner-upload-btn{
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--cream);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.banner-upload-btn img{
+  width: 20px;
+}
+
+
+textarea::-webkit-scrollbar{
+  width: 10px;
+}
+
+textarea::-webkit-scrollbar-thumb{
+  background: var(--dark-green);
+  border-radius: 10px;
+}
+
+.title,
+.article{
+  width: 100%;
+  min-height: 50px;
+  height: auto;
+  outline: none;
+  font-size: 50px;
+  font-weight: 600;
+  color: var(--dark-green);
+  resize: none;
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.title::placeholder,
+.article::placeholder{
+  color: var(--dark-green);
+}
+
+.article{
+  height: 500px;
+  font-size: 20px;
+  margin-top: 20px;
+  line-height: 30px;
+  font-weight: 500;
+  padding-bottom: 100px;
+  white-space: pre-wrap;
+}
+
+.blog-options{
+  width: 100%;
+  height: 60px;
+  background: var(--cream);
+  z-index: 9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.publish-btn {
+  background:var(--forest-green);
+  margin-left: 20px;
+  font-size: 14px;
+  padding: 0 20px;
+  width: fit-text;
+  height: 40px;
+  border-radius: 10px;
+  background: var(--forest-green);
+
+  font-family: "Dosis", sans-serif;
+  font-size: 15px;
+  color: var(--white);
+  line-height: 1.2;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+.upload-btn {
+  background:var(--forest-green);
+  margin-left: 20px;
+  font-size: 14px;
+  padding: 0 20px;
+  width: fit-text;
+  height: 40px;
+  border-radius: 10px;
+  background: var(--sage);
+  
+
+  font-family: "Dosis", sans-serif;
+  font-size: 15px;
+  color: var(--white);
+  line-height: 2.5;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+/* ------------------------------------------------[ADMIN PAGE] */
+.table-title {
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.admin-header {
+  font-family: "Dosis", sans-serif;
+  font-size: 3.5rem;
+  color: var(--sage)
+}
+
+.blog-post-table {
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 1.3em;
+  width:100%;
+
+}
+
+.blog-post-table thead tr{ 
+  border: var(--forest-green) 2px solid;
+  text-align: center;
+}
+
+.blog-post-table td {
+  padding: 5px;
+  border: var(--forest-green) 2px solid;
+}
+
+.edit-button {
+  background:var(--forest-green);
+  margin-left: 20px;
+  font-size: 14px;
+  padding: 0 20px;
+  width: fit-text;
+  height: 40px;
+  border-radius: 10px;
+  background: var(--forest-green);
+
+  font-family: "Dosis", sans-serif;
+  font-size: 15px;
+  color: var(--white);
+  line-height: 1.2;
+  letter-spacing: 1px;
+  cursor: pointer;
+  
+
+}
+
+.delete-button {
+  background:var(--forest-green);
+  margin-left: 20px;
+  font-size: 14px;
+  padding: 0 20px;
+  width: fit-text;
+  height: 40px;
+  border-radius: 10px;
+  background: var(--sage);
+
+  font-family: "Dosis", sans-serif;
+  font-size: 15px;
+  color: var(--white);
+  line-height: 1.2;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
 
 /* -------------------------------------------------
 [LINK STYLING} */
