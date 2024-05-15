@@ -382,6 +382,14 @@ textarea::-webkit-scrollbar-thumb{
   cursor: pointer;
 }
 
+.page-title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: var(--forest-green);
+  font-family: "Ephesis", cursive;
+}
+
+
 /* ------------------------------------------------[ADMIN PAGE] */
 .table-title {
   text-align: center;

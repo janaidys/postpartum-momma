@@ -9,7 +9,6 @@
 const express = require('express');
 const morgan = require('morgan');
 const path = require('path');
-const cors = require('cors')
 const app = express();
 const PORT = process.env.PORT || 3000; 
 const session = require('express-session');
@@ -23,7 +22,7 @@ const dotenv = require('dotenv');
 // const adminRoute = require('./routes/adminRoute')
 
 //middleware
-
+const cors = require('cors')
 app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -79,15 +78,41 @@ app.post('/upload', (request, response, next) => {
     let path = 'public/uploads/' + imageName;
 
     // create upload
-    file.mv(path, (err, result) => {
-        if(err){
-            throw err;
+    file.mv(path, (error, result) => {
+        if(error){
+            return next(error);
         } else{
             // our image upload path
-            res.json(`uploads/${imageName}`)
+            response.json(`uploads/${imageName}`)
         }
 })
 });
+
+// BLOG PATHS//
+
+// get ALL blog posts data
+app.get('api/blog', (request, response, next) => {
+    response.status(200).json({success: {message: "This will send all of the blog data"}, statusCode: 200});
+}); 
+
+app.get('api/blog/:id', (request, response, next)=>{
+    response.status(200).json({success: {message: "This will send the blog data of one post by id"}, statusCode: 200});
+});
+
+app.get('api/blog/create/new', (request, response, next)=>{
+    response.status(200).json({success: {message: "This will send all the data that has the ability to create new posts"}, statusCode: 200});
+});
+
+app.get('api/blog/edit/:id', (request, response, next)=>{
+    response.status(200).json({success: {message: "This will send all the data that to modify one blog post by id"}, statusCode: 200});
+});
+
+app.get('api/blog/delete/:id', (request, response, next)=>{
+    response.status(200).json({success: {message: "This will send all the data that to delete one blog post by id"}, statusCode: 200});
+});
+
+
+
 
 
     
