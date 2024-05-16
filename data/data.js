@@ -16,18 +16,18 @@ module.exports = [
     },
 
     {
-        banner: "",
-        title: "Setting up your Breastfeeding Cart",
-        article: "Let me just start out by saying: Pumping is breastfeeding! For those mommas that who have had difficulties nursing or their lifestyle is better suited for an exclusively pumping journey, more power to you! Setting up a pumping cart will make those late night feedings and overall mobility around your home smoother.",
-        upload: "",
+        banner: "tummy-time.jpeg",
+        title: "Play Kits",
+        article: "Playtime is super important for baby's cognitive development. The way they begin to play with their caretakers will begin to shape how they are able to navigate the world around them. Here are some of our favorite toy subscription boxes. These companies do the research so that you do not have to!. The Lovevery play kits are montessori inspired toy subscription boxes. Each box is backed by thorough research to ensure that your baby is reaching their developmental milestones through play. The Lalo Play boxes cater to your child's developmental needs as they continue to learn and grow. For the momma's that are struggling to figure out what to do with your baby all day; Lalo provides play guides with each box to help you break from the monotonous routine and explore new ways to play with your baby. ",
+        upload: "lalo-play-box.png lovevery.jpeg",
 
     },
 
     {
-        banner: "",
+        banner: "formula-banner.jpeg",
         title: "Choosing the Right Formula for Your Baby",
         article: "If you're a Costco member, this one is for you! Compared to other leading brands, this Costco generic brand is a much more affordable option. Modeled after breast milk, this formula is packed with vital nutrients for your baby's development without all the artificial growth hormones. Are you a breast feeding momma looking to transition to formula? This may be the formula for you! By Heart prides itself on being the closest to breast milk formula in the market with proven benefits such as easier digestion, less spit-up, more efficient weight gain and enhanced nutrient absorption as compared to a leading infant formula. A colicky baby is a huge NO from me dawg! If you're looking for a formula that will be easy on your baby's tummy, this one is for you! This formula is gentle and helps reduce fusiness, colic, and gas while providing your baby with vital nutrients from milk fat globule membrane (a membrane previously only found in breast milk).",
-        upload: "kirkland-baby-formula.jpeg", ""
+        upload: "kirkland-baby-formula.jpeg byheart-whole-nutrition-powder-infant-formula-photo.jpeg enfamil-neuropro-gentlease-infant-formula-photo.jpeg",
 
     }
 ]
