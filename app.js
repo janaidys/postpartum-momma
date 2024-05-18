@@ -9,6 +9,7 @@ require('./config/authStrategy');
 const express = require('express');
 const morgan = require('morgan');
 const path = require('path');
+const fileupload = require('express-fileupload')
 const app = express();
 const PORT = process.env.PORT || 3000; 
 const session = require('express-session');
@@ -26,6 +27,7 @@ const authRoute = require('./routes/authRoute');
 const cors = require('cors')
 app.use(morgan('dev'));
 app.use(express.json());
+app.use(fileupload());
 app.use(express.urlencoded({ extended: false }));
 app.use(
     helmet({
@@ -39,6 +41,7 @@ app.use(session({
 }))
 app.use(passport.initialize());
 app.use(passport.session())
+
 
 // public directory is available
 app.use(express.static(path.join(__dirname + "/public")));
@@ -65,25 +68,25 @@ app.get("/admin", (request, response, next) => {
 });
 
 
-// // Upload path
-// app.post('/upload', (request, response, next) => {
-//     let file = req.files.image;
-//     let date = new Date();
-//     // image name
-//     let imageName = date.getDate() + date.getTime() + file.name;
-//     // image upload path
-//     let path = 'public/uploads/' + imageName;
+// Upload path
+app.post('/upload', (request, response, next) => {
+    let file = req.files.image;
+    let date = new Date();
+    // image name
+    let imageName = date.getDate() + date.getTime() + file.name;
+    // image upload path
+    let path = 'public/uploads/' + imageName;
 
-//     // create upload
-//     file.mv(path, (error, result) => {
-//         if(error){
-//             return next(error);
-//         } else{
-//             // our image upload path
-//             response.json(`uploads/${imageName}`)
-//         }
-// })
-// });
+    // create upload
+    file.mv(path, (error, result) => {
+        if(error){
+            return next(error);
+        } else{
+            // our image upload path
+            response.json(`uploads/${imageName}`)
+        }
+})
+});
 
 // Route Paths
 // use the routes in this file

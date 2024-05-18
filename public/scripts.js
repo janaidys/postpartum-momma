@@ -1,73 +1,73 @@
-// // ---CREATE PAGE----
+// ---CREATE PAGE----
 
-// const blogTitleField = document.querySelector('.title');
-// const articleField = document.querySelector('.article');
+const blogTitleField = document.querySelector('.title');
+const articleField = document.querySelector('.article');
 
-// // banner
-// const bannerImage = document.querySelector('#banner-upload');
-// const banner = document.querySelector(".banner");
-// let bannerPath;
+// banner
+const bannerImage = document.querySelector('#banner-upload');
+const banner = document.querySelector(".banner");
+let bannerPath;
 
-// const publishBtn = document.querySelector('.publish-btn');
-// const uploadInput = document.querySelector('#image-upload');
+const publishBtn = document.querySelector('.publish-btn');
+const uploadInput = document.querySelector('#image-upload');
 
-// bannerImage.addEventListener('change', () => {
-//     uploadImage(bannerImage, "banner");
-// })
+bannerImage.addEventListener('change', () => {
+    uploadImage(bannerImage, "banner");
+})
 
-// uploadInput.addEventListener('change', () => {
-//     uploadImage(uploadInput, "image");
-// })
+uploadInput.addEventListener('change', () => {
+    uploadImage(uploadInput, "image");
+})
 
-// const uploadImage = (uploadFile, uploadType) => {
-//     const [file] = uploadFile.files;
-//     if(file && file.type.includes("image")){
-//         const formData = new FormData();
-//         formData.append('image', file);
+const uploadImage = (uploadFile, uploadType) => {
+    const [file] = uploadFile.files;
+    if(file && file.type.includes("image")){
+        const formData = new FormData();
+        formData.append('image', file);
 
-//         fetch('/upload', {
-//             method: 'post',
-//             body: formData
-//         }).then(res => res.json())
-//         .then(data => {
-//             if(uploadType == "image"){
-//                 addImage(data, file.name);
-//             } else{
-//                 bannerPath = `${location.origin}/${data}`;
-//                 banner.style.backgroundImage = `url("${bannerPath}")`;
-//             }
-//         })
-//     } else{
-//         alert("upload Image only");
-//     }
-// }
+        fetch('/upload', {
+            method: 'post',
+            body: formData
+        }).then(res => res.json())
+        .then(data => {
+            if(uploadType == "image"){
+                addImage(data, file.name);
+            } else{
+                bannerPath = `${location.origin}/${data}`;
+                banner.style.backgroundImage = `url("${bannerPath}")`;
+            }
+        })
+    } else{
+        alert("upload Image only");
+    }
+}
 
-// const addImage = (imagePath, alt) => {
-//     let curPos = articleField.selectionStart;
-//     let textToInsert = `\r![${alt}](${imagePath})\r`;
-//     articleField.value = articleField.value.slice(0, curPos) + textToInsert + articleField.value.slice(curPos);
-// }
+const addImage = (imagePath, alt) => {
+    let curPos = articleField.selectionStart;
+    let textToInsert = `\r![${alt}](${imagePath})\r`;
+    articleField.value = articleField.value.slice(0, curPos) + textToInsert + articleField.value.slice(curPos);
+}
 
 
 
-// // publishing button
+// publishing button
 
-// let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
-// publishBtn.addEventListener('click', () => {
-//     if(articleField.value.length && blogTitleField.value.length){
-//         // generating id
-//         let letters = 'abcdefghijklmnopqrstuvwxyz';
-//         let blogTitle = blogTitleField.value.split(" ").join("-");
-//         let id = '';
-//         for(let i = 0; i < 4; i++){
-//             id += letters[Math.floor(Math.random() * letters.length)];
-//         }
+publishBtn.addEventListener('click', () => {
+    if(articleField.value.length && blogTitleField.value.length){
+        // generating id
+        let letters = 'abcdefghijklmnopqrstuvwxyz';
+        let blogTitle = blogTitleField.value.split(" ").join("-");
+        let id = '';
+        for(let i = 0; i < 4; i++){
+            id += letters[Math.floor(Math.random() * letters.length)];
+        }
 
-//         // setting up docName
-//         let docName = `${blogTitle}-${id}`;
-//         let date = new Date(); // for published at info
+        // setting up docName
+        let docName = `${blogTitle}-${id}`;
+        let date = new Date(); // for published at info
 
-//     }
-// });
+    }
+});
 

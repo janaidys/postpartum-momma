@@ -1,4 +1,5 @@
 const express = require('express');
+const router = express.Router();
 
 // get all blog posts 
 router.get('/', (request, response, next)=>{
@@ -39,4 +40,4 @@ router.delete('/:id/comment/delete/:id', (request, response, next)=>{
     response.status(200).json({success: {message: "This will send all the data that to delete one comment under a post"}, statusCode: 200});
 });
 
-module.exports = blogRoute;
+module.exports = router;
