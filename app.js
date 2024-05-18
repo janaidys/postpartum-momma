@@ -1,8 +1,8 @@
-// require('dotenv').config();
+require('dotenv').config();
 
 
-// require('./config/connection');
-// require('./config/authStrategy');
+require('./config/connection');
+require('./config/authStrategy');
 
 
 // packages 
@@ -19,7 +19,8 @@ const dotenv = require('dotenv');
 
 // define routing variables 
 const blogRoute = require('./routes/blogRoute');
-// const adminRoute = require('./routes/adminRoute')
+const authRoute = require('./routes/authRoute');
+
 
 //middleware
 const cors = require('cors')
@@ -87,15 +88,9 @@ app.get("/admin", (request, response, next) => {
 // Route Paths
 // use the routes in this file
 app.use('api/blog', blogRoute);
-// app.use('/,'authRoutes);
+app.use('/,', authRoute);
 
 
-
-
-
-
-    
- 
 
 
 // Server
