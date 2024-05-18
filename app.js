@@ -18,8 +18,7 @@ const dotenv = require('dotenv');
 
 
 // define routing variables 
-// const blogRoute = require('./routes/blogRoute');
-// const forumRoute = require('./routes/forumRoute')
+const blogRoute = require('./routes/blogRoute');
 // const adminRoute = require('./routes/adminRoute')
 
 //middleware
@@ -59,66 +58,45 @@ app.get("/login", (request, response, next) => {
     response.status(200).json({success: {message: "This route points to the Login page"}, statusCode: 200});
 });
 
-// Admin Paths 
+// Admin Path 
 app.get("/admin", (request, response, next) => {
     response.status(200).json({success: {message: "This route points to the Admin page"}, statusCode: 200});
 });
 
-app.get("/admin/create-blog", (request, response, next) => {
-    response.status(200).json({success: {message: "This route points to the Create Blog Post page"}, statusCode: 200});
 
-});
+// // Upload path
+// app.post('/upload', (request, response, next) => {
+//     let file = req.files.image;
+//     let date = new Date();
+//     // image name
+//     let imageName = date.getDate() + date.getTime() + file.name;
+//     // image upload path
+//     let path = 'public/uploads/' + imageName;
 
-// Upload path
-app.post('/upload', (request, response, next) => {
-    let file = req.files.image;
-    let date = new Date();
-    // image name
-    let imageName = date.getDate() + date.getTime() + file.name;
-    // image upload path
-    let path = 'public/uploads/' + imageName;
+//     // create upload
+//     file.mv(path, (error, result) => {
+//         if(error){
+//             return next(error);
+//         } else{
+//             // our image upload path
+//             response.json(`uploads/${imageName}`)
+//         }
+// })
+// });
 
-    // create upload
-    file.mv(path, (error, result) => {
-        if(error){
-            return next(error);
-        } else{
-            // our image upload path
-            response.json(`uploads/${imageName}`)
-        }
-})
-});
+// Route Paths
+// use the routes in this file
+app.use('api/blog', blogRoute);
+// app.use('/,'authRoutes);
 
-// BLOG PATHS//
-
-// get ALL blog posts data
-app.get('api/blog', (request, response, next) => {
-    response.status(200).json({success: {message: "This will send all of the blog data"}, statusCode: 200});
-}); 
-
-app.get('api/blog/:id', (request, response, next)=>{
-    response.status(200).json({success: {message: "This will send the blog data of one post by id"}, statusCode: 200});
-});
-
-app.get('api/blog/create/new', (request, response, next)=>{
-    response.status(200).json({success: {message: "This will send all the data that has the ability to create new posts"}, statusCode: 200});
-});
-
-app.get('api/blog/edit/:id', (request, response, next)=>{
-    response.status(200).json({success: {message: "This will send all the data that to modify one blog post by id"}, statusCode: 200});
-});
-
-app.get('api/blog/delete/:id', (request, response, next)=>{
-    response.status(200).json({success: {message: "This will send all the data that to delete one blog post by id"}, statusCode: 200});
-});
 
 
 
 
 
     
-// Route Paths 
-// app.use('/', blogRoute);
+ 
+
 
 // Server
 app.listen(PORT, () => {
