@@ -11,6 +11,7 @@ const morgan = require('morgan');
 const path = require('path');
 const fileupload = require('express-fileupload')
 const app = express();
+const application = initializeApp(firebaseConfig);
 const PORT = process.env.PORT || 3000; 
 const session = require('express-session');
 const passport = require('passport');

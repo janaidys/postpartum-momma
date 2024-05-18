@@ -68,6 +68,21 @@ publishBtn.addEventListener('click', () => {
         let docName = `${blogTitle}-${id}`;
         let date = new Date(); // for published at info
 
+
+        // access firestore db variable 
+
+        db.collection('postpartum-momma').doc(docName).set({
+            title: blogTitleField.value, 
+            article: articleField. value,
+            bannerImage: bannerPath,
+            publishedAt: `${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear()}`
+        })
+        .then(()  => {
+            console.log('date entered');
+        })
+        .catch((error) => {
+          console.error(err);   
+    })
     }
 });
 
