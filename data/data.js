@@ -1,5 +1,5 @@
 const bedtime = {
-  id: 1,
+  post_id: 1,
   banner: "baby-nursery.jpg",
   title: "Bedtime Routine",
   article:
@@ -8,7 +8,7 @@ const bedtime = {
 };
 
 const restoreCore = {
-  id:2,
+  post_id:2,
   banner: "diastasis-recti.png",
   title: "Restore your Core",
   article:
@@ -17,7 +17,7 @@ const restoreCore = {
 };
 
 const playKits = {
-  id: 3,
+  post_id: 3,
   banner: "tummy-time.jpeg",
   title: "Play Kits",
   article: [
@@ -29,7 +29,7 @@ const playKits = {
 };
 
 const babyFormula = {
-  id: 4,
+  post_id: 4,
   banner: "formula-banner.jpeg",
   title: "Choosing the Right Formula for Your Baby",
   article: [

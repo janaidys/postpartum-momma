@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 
+
 const postSchema = new mongoose.Schema({
     bannerImage: {
         type: String,
@@ -13,5 +14,5 @@ const postSchema = new mongoose.Schema({
     }
 }) 
 
-const User = mongoose.model('Post', postSchema);
-module.exports = User;
+const Post = mongoose.model('Post', postSchema);
+module.exports =Post;
