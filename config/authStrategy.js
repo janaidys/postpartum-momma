@@ -37,7 +37,7 @@ passport.use(
   new GithubStrategy({
     clientID:process.env.GITHUB_CLIENT_ID, 
     clientSecret: process.env.GITHUB_CLIENT_SECRET, 
-    callbackURL:'http://localhost:3000/auth/github'
+    callbackURL:'https://postpartum-momma.onrender.com'
   },
     (accessToken, refreshToken, profile, done) => {
     console.log(profile);
@@ -51,7 +51,7 @@ passport.use(
     {
       clientID: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-      callbackURL: "http://localhost:3000/auth/google/",
+      callbackURL: "https://postpartum-momma.onrender.com",
     },
     (accessToken, refreshToken, profile, done) => {
       console.log(profile);
