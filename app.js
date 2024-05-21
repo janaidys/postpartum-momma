@@ -60,6 +60,7 @@ app.get("/login", (request, response, next) => {
     response.status(200).json({success: {message: "This route points to the Login page"}, statusCode: 200});
 });
 
+
 // Admin Path 
 app.get("/admin", (request, response, next) => {
     response.status(200).json({success: {message: "This route points to the Admin page"}, statusCode: 200});
