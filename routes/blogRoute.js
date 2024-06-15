@@ -1,28 +1,20 @@
 const express = require('express');
 const router = express.Router();
+const {getAllPosts, getPost, createPost, editPost, deletePost} = require("../controllers/blogController")
 
 // get all blog posts 
-router.get('/', (request, response, next)=>{
-    response.status(200).json({success: {message: "This will send the blog data of ALL posts"}, statusCode: 200});
-});
-
+router.get('/', getAllPosts);
 
 // get 1 blog post 
-router.get('/:id', (request, response, next)=>{
-    response.status(200).json({success: {message: "This will send the blog data of one post by id"}, statusCode: 200});
-});
+router.get('/:id', getPost);
 
 // create a new blog post
-router.post('/create/new', (request, response, next)=>{
-    response.status(200).json({success: {message: "This will send all the data that has the ability to create new posts"}, statusCode: 200});
-});
+router.post('/create/new', createPost);
 
-router.put('/edit/:id', (request, response, next)=>{
-    response.status(200).json({success: {message: "This will send all the data that to modify one blog post by id"}, statusCode: 200});
-});
+//edit a blog post
+router.put('/edit/:id', editPost);
 
-router.delete('/delete/:id', (request, response, next)=>{
-    response.status(200).json({success: {message: "This will send all the data that to delete one blog post by id"}, statusCode: 200});
-});
+//delete a blog post
+router.delete('/delete/:id', deletePost);
 
 module.exports = router;
