@@ -1,5 +1,5 @@
 // summoning post model
-const Post = require("../models/postModel");
+const Post = require("../models/blogModel");
 
 // get ALL blog posts
 const getAllPosts = async (request, response, next) => {
@@ -10,7 +10,7 @@ const getAllPosts = async (request, response, next) => {
           .status(200)
           .json({
             success: { message: "Found all blog posts!" },
-            data: post,
+            data: posts,
             statusCode: 200,
           })
       );
@@ -82,7 +82,7 @@ const editPost = async (request, response, next) => {
     const { banner, title, article } = request.body;
   
     await Post.findByIdAndUpdate(
-      { id },
+      {id},
       {
         banner,
         title,
@@ -112,7 +112,7 @@ const editPost = async (request, response, next) => {
 const deletePost = async (request, response, next) => {
     const { id } = request.params;
   
-    await Post.findByIdAndDelete("id");
+    await Post.findByIdAndDelete(id);
   
     try {
       response
