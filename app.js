@@ -70,7 +70,7 @@ app.get("/admin", (request, response, next) => {
 
 // Route Paths
 // use the routes in this file
-app.use('api/blog', blogRoute);
+app.use('/api/blog', blogRoute);
 app.use('/,', authRoute);
 
 
