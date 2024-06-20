@@ -4,8 +4,8 @@ const Post = require("../models/blogModel");
 // get ALL blog posts
 const getAllPosts = async (request, response, next) => {
   try {
-    if (200) {
-      await Post.find({}).then((posts) =>
+
+      const posts =  await Post.find({})
         response
           .status(200)
           .json({
@@ -13,8 +13,8 @@ const getAllPosts = async (request, response, next) => {
             data: posts,
             statusCode: 200,
           })
-      );
-    }
+    ;
+    
   } catch (error) {
     response
       .status(400)
