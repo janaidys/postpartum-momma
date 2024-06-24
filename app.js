@@ -52,6 +52,13 @@ app.get("/", (request, response, next) => {
     response.status(200).json({success: {message: "This route points to the Home page"}, statusCode: 200});
 });
 
+app.get("/bed", (request, response, next) => {
+    response.status(200).json({success: {message: "This route points to the Bed page"}, statusCode: 200});
+});
+
+app.get("/recovery", (request, response, next) => {
+    response.status(200).json({success: {message: "This route points to the Recovery page"}, statusCode: 200});
+});
 
 app.get("/about", (request, response, next) => {
     response.status(200).json({success: {message: "This route points to the About page"}, statusCode: 200});
@@ -59,6 +66,10 @@ app.get("/about", (request, response, next) => {
 
 app.get("/login", (request, response, next) => {
     response.status(200).json({success: {message: "This route points to the Login page"}, statusCode: 200});
+});
+
+app.get("/signup", (request, response, next) => {
+    response.status(200).json({success: {message: "This route points to the Signup page"}, statusCode: 200});
 });
 
 

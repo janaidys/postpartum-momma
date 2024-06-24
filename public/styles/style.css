@@ -481,7 +481,7 @@ a:visited {
  /* mouse over link */
 a:hover {
     font-weight:bold;
-    color:var(--sage)  
+    color:var(--sage);
 }
 
  /* selected link */
