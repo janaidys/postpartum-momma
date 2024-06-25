@@ -27,7 +27,7 @@ const getAllPosts = async (request, response, next) => {
 
 // get 1 blog post
 const getPost = async (request, response, next) => {
-  const { id } = req.params;
+  const { id } = request.params;
 
   try {
     await Post.findOne({ _id: id }).then((foundPost) => {
@@ -72,10 +72,9 @@ const createPost = async (request, response, next) => {
       statusCode: 201,
     });
   } catch (error) {
-    console.log(error)
-    // response
-    //   .status(400)
-    //   .json({ error: "Something went wrong creating a blog post", statusCode: 400 });
+    response
+      .status(400)
+      .json({ error: "Something went wrong creating a blog post", statusCode: 400 });
   }
 };
 
