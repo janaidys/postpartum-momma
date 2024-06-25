@@ -51,13 +51,17 @@ const getPost = async (request, response, next) => {
 
 // create a blog post
 const createPost = async (request, response, next) => {
-  const { banner, title, article } = request.body;
+  console.log(request);
+  const { banner, title, blurb, article, upload } = request.body;
 
   const newPost = new Post({
     banner: banner,
     title: title,
+    blurb: blurb,
     article: article,
+    upload: upload
   });
+  console.log(newPost);
 
   await newPost.save();
 
@@ -68,9 +72,10 @@ const createPost = async (request, response, next) => {
       statusCode: 201,
     });
   } catch (error) {
-    response
-      .status(400)
-      .json({ error: "Something went wrong creating a blog post", statusCode: 400 });
+    console.log(error)
+    // response
+    //   .status(400)
+    //   .json({ error: "Something went wrong creating a blog post", statusCode: 400 });
   }
 };
 

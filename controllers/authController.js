@@ -20,7 +20,7 @@ success: {message: "User logged out!"}, statusCode:200,
 };
 
 const signupRequest = (request, response, next) => {
-  const {firstName, lastName, username, password}  = request.body;
+  const {firstName, lastName, email, password}  = request.body;
 
   bcrypt.hash(password, 10, async (error, hashedPassword) => { 
     if(error) {
@@ -29,7 +29,7 @@ const signupRequest = (request, response, next) => {
     const newUser = new User ({ 
         firstName, 
         lastName, 
-        username,
+        email,
         password: hashedPassword,
     });
     try {

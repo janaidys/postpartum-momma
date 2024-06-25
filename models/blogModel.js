@@ -11,6 +11,9 @@ const postSchema = new mongoose.Schema({
     title: { 
         type: String
     },
+    blurb: {
+        type: String
+    },
     article: {
         type: String,  
     },
