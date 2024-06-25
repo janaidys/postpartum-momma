@@ -51,7 +51,6 @@ const getPost = async (request, response, next) => {
 
 // create a blog post
 const createPost = async (request, response, next) => {
-  console.log(request);
   const { banner, title, blurb, article, upload } = request.body;
 
   const newPost = new Post({
@@ -61,7 +60,6 @@ const createPost = async (request, response, next) => {
     article: article,
     upload: upload
   });
-  console.log(newPost);
 
   await newPost.save();
 
@@ -83,22 +81,23 @@ const createPost = async (request, response, next) => {
 const editPost = async (request, response, next) => {
     const { id } = request.params;
   
-    const { banner, title, article } = request.body;
+    const { banner, title, blurb, article } = request.body;
   
-    await Post.findByIdAndUpdate(
-      {id},
+    const updatePost = await Post.findByIdAndUpdate(
+      id,
       {
         banner,
         title,
+        blurb,
         article,
       },
       { new: true }
     );
-  
+      console.log(updatePost);
     try {
       response.status(201).json({
         success: "Post is updated",
-        data: newPost,
+        data: updatePost,
         statusCode: 201,
       });
     } catch (error) {

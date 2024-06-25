@@ -17,7 +17,7 @@ passport.use(
         }
 
         bcrypt.compare(password, user.password, (error, result) => {
-          console.log("result", result);
+          // console.log("result", result);
           if (error) {
             return done(error);
           }
@@ -40,7 +40,7 @@ passport.use(
     callbackURL:'https://postpartum-momma.onrender.com'
   },
     (accessToken, refreshToken, profile, done) => {
-    console.log(profile);
+    // console.log(profile);
     return done(null, profile);
   })
 );
@@ -54,7 +54,7 @@ passport.use(
       callbackURL: "https://postpartum-momma.onrender.com",
     },
     (accessToken, refreshToken, profile, done) => {
-      console.log(profile);
+      // console.log(profile);
       return done(null, profile);
     }
   )
