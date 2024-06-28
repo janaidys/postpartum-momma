@@ -1,6 +1,35 @@
 const passport = require('passport');
 const bcrypt = require('bcrypt');
 
+const loginLocal = (req, res, next) => {
+    // This will call our local strategy
+    passport.authenticate("local", (err, user, info) => {
+      if (err) {
+        return next(err);
+      }
+  
+      if (!user) {
+        return res.status(401).json({
+          error: { message: info.message },
+        });
+      }
+  
+      req.login(user, (err) => {
+        if (err) {
+          return next(err);
+        }
+        const userCopy = { ...req.user._doc };
+        userCopy.password = undefined;
+  
+        return res.status(200).json({
+          success: { message: "Login successful." },
+          data: { user: userCopy },
+          statusCode: 200,
+        });
+      });
+    })(req, res, next);
+  };
+
 const loginLocalFailed = (request, response, next) => {
     response.status(401).json({error: {message: "Username or password is incorrect."}, statusCode: 401,
 });
@@ -54,4 +83,4 @@ const signupRequest = (request, response, next) => {
 };
 
 
-module.exports = {loginLocalFailed, logoutRequest, signupRequest};
+module.exports = {loginLocalFailed, logoutRequest, signupRequest, loginLocal};
