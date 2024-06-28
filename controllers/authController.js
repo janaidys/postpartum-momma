@@ -1,7 +1,10 @@
 const passport = require('passport');
 const bcrypt = require('bcrypt');
 
+const User = require('../models/userModel')
+
 const loginLocalFailed = (request, response, next) => {
+    console.log(request.body)
     response.status(401).json({error: {message: "Username or password is incorrect."}, statusCode: 401,
 });
 };
@@ -41,13 +44,14 @@ const signupRequest = (request, response, next) => {
         }
     });   
     } catch (error) {
-        if(error.code === 11000 && error.keyPattern.username) {
-            response.status(400).json({error: {message: "Username already exists."}, statusCode: 400, 
-        });
-        }else {
-            response.status(500).json({error: {message: "Internal server error"}, statusCode: 500,
-        });
-        }
+        console.log(error)
+        // if(error.code === 11000 && error.keyPattern.username) {
+        //     response.status(400).json({error: {message: "Username already exists."}, statusCode: 400, 
+        // });
+        // }else {
+        //     response.status(500).json({error: {message: "Internal server error"}, statusCode: 500,
+        // });
+        // }
         
     } 
 });

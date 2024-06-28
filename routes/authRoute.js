@@ -14,9 +14,9 @@ router.post(
     (request, response, next) => {
         response.status(200).json({success: {message: "User logged in"},  
         data: {
-            username: request.user.username,
-            firstName: request.user.firstName, 
-            lastName: request.user.lastName, 
+            email: request.user.email,
+            // firstName: request.user.firstName, 
+            // lastName: request.user.lastName, 
         },
         statusCode: 200,
         });

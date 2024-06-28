@@ -9,7 +9,7 @@ const userSchema = new mongoose.Schema({
     lastName: { 
         type: String
     },
-    username: {
+    email: {
         type: String,
         required: true,
         unique: true
@@ -20,10 +20,10 @@ const userSchema = new mongoose.Schema({
     salt: {
         type: Buffer
     },
-    strategy: {
-        type: String,
-        required: true
-    }
+    // strategy: {
+    //     type: String,
+    //     required: true
+    // }
 }) 
 
 const User = mongoose.model('User', userSchema);
